@@ -2,7 +2,7 @@
 /*
 Plugin Name: Remove WP Link from Admin Bar
 Plugin URI: http://findingsimple.com/
-Description: Simply removes the annoying WP link from the admin bar in 3.3.
+Description: Simply removes the WP link and dropdown from the admin bar in 3.3.
 Version: 0.1
 Author: Finding Simple
 Author URI: http://findingsimple.com/
