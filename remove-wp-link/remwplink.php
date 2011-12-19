@@ -24,9 +24,20 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+function remInit() {
+	global $wp_version;
+	if (version_compare($wp_version, '3.3', '<')) {
+		exit('This plugin requires WP 3.3 or higher.');
+	}
+}
+register_activation_hook( __FILE__, 'remInit' );
+
 function remWPLink() {
-	if(has_action('admin_bar_menu'))
-		remove_action('admin_bar_menu', 'wp_admin_bar_wp_menu');
+	global $wp_version;
+	if (version_compare($wp_version, '3.3', '>=')) {
+		if(has_action('admin_bar_menu'))
+			remove_action('admin_bar_menu', 'wp_admin_bar_wp_menu');
+	}
 }
 add_action('init', 'remWPLink');
 
